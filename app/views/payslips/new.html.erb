@@ -1,0 +1,37 @@
+<div id="flash"></div>
+
+
+<h1>Please enter Employee Info</h1>
+<%= form_with(model: @payslip) do |f| %>
+  <p>
+    <%= f.label :first_name %> <br>
+    <%= f.text_field :first_name, id: 'payslip_first_name' %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %> <br>
+    <%= f.text_field :last_name, id: 'payslip_last_name' %>
+  </p>
+
+  <p>
+    <%= f.label :annual_salary %> <br>
+    <%= f.text_field :annual_salary, id: 'payslip_annual_salary' %>
+  </p>
+
+  <p>
+    <%= f.label :super_rate %> <br>
+    <%= f.text_field :super_rate, id: 'payslip_super_rate' %>
+  </p>
+
+  <p>
+    <%= f.label :payment_start_date %> <br>
+    <%= f.text_field :payment_start_date, id: 'payslip_payment_start_date' %>
+  </p>
+
+  <p>
+    <%= f.label :payment_end_date %> <br>
+    <%= f.text_field :payment_end_date, id: 'payslip_payment_end_date' %>
+  </p>
+
+  <%= f.submit 'Calculate' %>
+<% end %>
