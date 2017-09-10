@@ -15,7 +15,8 @@ class Payslip
   validates_format_of :payment_start_date, :payment_end_date,
                       with: /\d{2}\/\d{2}\/\d{4}/,
                       message: "Date must be in the format: mm/dd/yyyy"
-  validate :payment_start_date_cannot_greater_than_payment_end_date
+  validate :payment_start_date_cannot_greater_than_payment_end_date,
+            if: ->(obj) { obj.payment_start_date.present? && obj.payment_end_date.present? }
 
   private
 
