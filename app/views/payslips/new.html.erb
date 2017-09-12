@@ -1,6 +1,5 @@
 <div id="flash"></div>
 
-
 <h1>Please enter Employee Info</h1>
 <%= form_with(model: @payslip) do |f| %>
   <p>
@@ -24,14 +23,10 @@
   </p>
 
   <p>
-    <%= f.label :payment_start_date %> <br>
-    <%= f.text_field :payment_start_date, id: 'payslip_payment_start_date' %>
-  </p>
-
-  <p>
-    <%= f.label :payment_end_date %> <br>
-    <%= f.text_field :payment_end_date, id: 'payslip_payment_end_date' %>
+    <%= f.label :payment_month %> <br>
+    <%= f.text_field :payment_month, id: 'payslip_payment_month' %>
   </p>
 
   <%= f.submit 'Calculate' %>
 <% end %>
+
