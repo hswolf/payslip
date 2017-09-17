@@ -1,12 +1,38 @@
-<b>Name</b>
-<p><%= full_name(payslip.first_name, payslip.last_name) %></p>
-<b>Pay period</b>
-<p><%= pay_period(payslip.payment_start_date) %></p>
-<b>Gross income</b>
-<p><%= payslip.gross_income %></p>
-<b>Income tax</b>
-<p><%= payslip.income_tax %></p>
-<b>Net income</b>
-<p><%= payslip.net_income %></p>
-<b>Super</b>
-<p><%= payslip.super %></p>
+<form class="jumbotron">
+  <div class="row">
+    <label class="col-sm-4">Name</label>
+    <div class="col-sm-6">
+      <%= full_name(payslip.first_name, payslip.last_name) %>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-4">Pay Period</label>
+    <div class="col-sm-6">
+      <%= pay_period(payslip.payment_start_date) %>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-4">Gross Income</label>
+    <div class="col-sm-6">
+      $<%= payslip.gross_income %>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-4">Income Tax</label>
+    <div class="col-sm-6">
+      $<%= payslip.income_tax %>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-4">Net Income</label>
+    <div class="col-sm-6">
+      $<%= payslip.net_income %>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-4">Super</label>
+    <div class="col-sm-6">
+      $<%= payslip.super %>
+    </div>
+  </div>
+</form>

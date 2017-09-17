@@ -1,32 +1,52 @@
-<div id="flash"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Please enter Employee Info</h2>
+        <%= form_with(model: @payslip) do |f| %>
+          <div class='form-group'>
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, id: 'payslip_first_name', class: 'form-control', required: true %>
+            <div class="text-danger" id="error_first_name"></div>
+          </div>
 
-<h1>Please enter Employee Info</h1>
-<%= form_with(model: @payslip) do |f| %>
-  <p>
-    <%= f.label :first_name %> <br>
-    <%= f.text_field :first_name, id: 'payslip_first_name' %>
-  </p>
+          <div class="form-group">
+            <%= f.label :last_name %> <br>
+            <%= f.text_field :last_name, id: 'payslip_last_name', class: 'form-control', required: true %>
+            <div class="text-danger" id="error_last_name"></div>
+          </div>
 
-  <p>
-    <%= f.label :last_name %> <br>
-    <%= f.text_field :last_name, id: 'payslip_last_name' %>
-  </p>
+          <div class="form-group">
+            <%= f.label :annual_salary %> <br>
+            <%= f.text_field :annual_salary, id: 'payslip_annual_salary', class: 'form-control', required: true %>
+            <div class="text-danger" id="error_annual_salary"></div>
+          </div>
 
-  <p>
-    <%= f.label :annual_salary %> <br>
-    <%= f.text_field :annual_salary, id: 'payslip_annual_salary' %>
-  </p>
+          <div class="form-group">
+            <%= f.label :super_rate %> <br>
+            <%= f.text_field :super_rate, id: 'payslip_super_rate', class: 'form-control', required: true %>
+            <div class="text-danger" id="error_super_rate"></div>
+          </div>
 
-  <p>
-    <%= f.label :super_rate %> <br>
-    <%= f.text_field :super_rate, id: 'payslip_super_rate' %>
-  </p>
+          <div class="form-group">
+            <%= f.label :payment_month %> <br>
+            <div class='input-group date'>
+              <%= f.text_field :payment_month, id: 'payslip_payment_month', class: 'form-control', required: true %>
+              <label class="input-group-addon btn" for="payslip_payment_month">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </label>
+            </div>
+            <div class="text-danger" id="error_payment_month"></div>
+          </div>
 
-  <p>
-    <%= f.label :payment_month %> <br>
-    <%= f.text_field :payment_month, id: 'payslip_payment_month' %>
-  </p>
+          <%= f.submit 'Calculate', class: 'btn btn-primary'%>
+        <% end %>
+    </div>
+    <div class="col-sm-6">
+      <h2 class="text-center">Payslip</h2>
+      <div id="payslip">
+      </div>
+    </div>
+  </div>
+</div>
 
-  <%= f.submit 'Calculate' %>
-<% end %>
 

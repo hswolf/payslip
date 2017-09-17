@@ -2,7 +2,9 @@ class TaxRate < ApplicationRecord
   belongs_to :nation
   has_many   :tax_ranges, dependent: :destroy
 
-  validates_uniqueness_of :start_date, scope: [:end_date, :nation]
+  validates_presence_of :nation_id
+  validates :start_date, presence: true, uniqueness: { scope: :nation_id }
+  validates :end_date, presence: true, uniqueness: { scope: :nation_id }
 
   default_scope { order(:start_date) }
 

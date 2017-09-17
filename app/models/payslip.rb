@@ -30,7 +30,7 @@ class Payslip
   end
 
   def super
-    (gross_income.to_f * super_rate.to_f / 100.to_f).round
+    (BigDecimal(gross_income.to_s) * BigDecimal(super_rate.to_s) / BigDecimal(100.to_s)).to_f.round
   end
 
   private

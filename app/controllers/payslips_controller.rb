@@ -10,8 +10,9 @@ class PayslipsController < ApplicationController
 
     respond_to do |format|
       if @payslip.valid?
-        format.js
+        format.js { render 'create_success' }
       else
+        format.js { render 'create_failed' }
       end
     end
   end

@@ -1,0 +1,10 @@
+$(".text-danger").html("")
+$("#payslip").html("")
+
+<% @payslip.errors.messages.each do |key, value| %>
+  <% if key == :payment_start_date || key == :payment_end_date %>
+    $("#error_payment_month").html("<%= value.first %>")
+  <% else %>
+    $("#error_<%= key %>").html("<%= value.first %>")
+  <% end %>
+<% end %>
